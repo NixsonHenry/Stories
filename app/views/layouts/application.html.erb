@@ -6,16 +6,49 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500;700&display=swap" rel="stylesheet">
 
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/stylesheets/jquery.sidr.dark.min.css">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+  
+   <div class="navbar-dark container menu">
+    <a id="simple-menu" href="#sidr">
+    <button class="navbar-toggler">
+      <span class="navbar-toggler-icon"></span>
+    </button></a>
+   </div>
+
+    <div id="sidr">
+    <ul>
+        <li class="active"><%= link_to "Home", '/' %></li>
+        <li><%= link_to "About", 'about' %></li>
+        <li><%= link_to "Contact", 'contact' %></li>
+    </ul>
+    </div>
+    
+    <script src="https://cdn.jsdelivr.net/jquery/2.2.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.sidr/2.2.1/jquery.sidr.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+        $('#simple-menu').sidr();
+        });
+    </script>
+
   
     <%= yield %>
+
+    <footer >
+      <p class="storie-project">A STORIE PROJECT</p>
+    </footer>
+ 
 
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
